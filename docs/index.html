@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panda's Study Portal 🐼</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f1a; color: #e2e8f0; min-height: 100vh; }
+  
+  /* NAV */
+  nav { background: #1a1a2e; border-bottom: 1px solid #2d2d4e; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-brand { font-size: 1.3rem; font-weight: 700; background: linear-gradient(135deg, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .nav-links { display: flex; gap: 0.5rem; }
+  .nav-btn { background: transparent; border: 1px solid #3d3d6b; color: #a0aec0; padding: 0.4rem 1rem; border-radius: 8px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+  .nav-btn:hover, .nav-btn.active { background: #6d28d9; border-color: #6d28d9; color: white; }
+
+  /* PAGES */
+  .page { display: none; padding: 2rem; max-width: 1100px; margin: 0 auto; }
+  .page.active { display: block; }
+
+  /* CARDS */
+  .card { background: #1a1a2e; border: 1px solid #2d2d4e; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; }
+  .card-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; margin-bottom: 0.5rem; }
+  .card-value { font-size: 2rem; font-weight: 700; color: #e2e8f0; }
+  .card-sub { font-size: 0.85rem; color: #6b7280; margin-top: 0.25rem; }
+
+  /* GRID */
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+
+  /* PROGRESS BAR */
+  .progress-bar { background: #2d2d4e; border-radius: 99px; height: 8px; overflow: hidden; margin-top: 0.5rem; }
+  .progress-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #6d28d9, #60a5fa); transition: width 0.5s ease; }
+
+  /* BADGES */
+  .badge { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 99px; font-size: 0.75rem; font-weight: 600; }
+  .badge-theory { background: #1e3a5f; color: #60a5fa; }
+  .badge-practical { background: #1a3a2a; color: #34d399; }
+  .badge-review { background: #3a1a3a; color: #c084fc; }
+  .badge-today { background: #2d1b4e; color: #a78bfa; }
+  .badge-done { background: #1a3a2a; color: #34d399; }
+  .badge-upcoming { background: #1a1a2e; color: #6b7280; border: 1px solid #2d2d4e; }
+
+  /* STREAK */
+  .streak { display: flex; align-items: center; gap: 0.5rem; }
+  .streak-fire { font-size: 1.5rem; }
+  .streak-count { font-size: 2rem; font-weight: 800; color: #f59e0b; }
+
+  /* TODAY CARD */
+  .today-card { background: linear-gradient(135deg, #1e1b4b, #1e3a5f); border: 1px solid #4338ca; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
+  .today-title { font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+  .today-topics { list-style: none; margin-top: 1rem; }
+  .today-topics li { padding: 0.4rem 0; color: #a5b4fc; display: flex; align-items: center; gap: 0.5rem; }
+  .today-topics li::before { content: "→"; color: #6d28d9; }
+
+  /* SCHEDULE */
+  .schedule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
+  .schedule-item { background: #1a1a2e; border: 1px solid #2d2d4e; border-radius: 12px; padding: 1rem; cursor: pointer; transition: all 0.2s; }
+  .schedule-item:hover { border-color: #6d28d9; transform: translateY(-2px); }
+  .schedule-item.today { border-color: #6d28d9; background: #1e1b4b; }
+  .schedule-item.completed { border-color: #059669; background: #022c22; }
+  .schedule-day { font-size: 0.7rem; color: #6b7280; margin-bottom: 0.3rem; }
+  .schedule-title { font-size: 0.8rem; font-weight: 600; color: #e2e8f0; line-height: 1.3; }
+
+  /* TASKS */
+  .task-item { display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: #0f0f1a; border-radius: 10px; margin-bottom: 0.5rem; }
+  .task-check { width: 20px; height: 20px; border-radius: 6px; border: 2px solid #4338ca; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+  .task-check.checked { background: #6d28d9; border-color: #6d28d9; }
+  .task-text { flex: 1; font-size: 0.9rem; color: #e2e8f0; }
+  .task-text.done { text-decoration: line-through; color: #6b7280; }
+
+  /* REPORTS */
+  .report-item { background: #0f0f1a; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; border-left: 3px solid #6d28d9; }
+  .report-date { font-size: 0.75rem; color: #6b7280; margin-bottom: 0.5rem; }
+  .report-topic { font-weight: 600; color: #a78bfa; margin-bottom: 0.5rem; }
+  .report-score { display: inline-flex; align-items: center; gap: 0.3rem; background: #1e1b4b; padding: 0.2rem 0.7rem; border-radius: 99px; font-size: 0.8rem; color: #a78bfa; }
+
+  /* WEEK TABS */
+  .week-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .week-tab { padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid #2d2d4e; background: transparent; color: #6b7280; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+  .week-tab.active { background: #6d28d9; border-color: #6d28d9; color: white; }
+
+  /* EMPTY STATE */
+  .empty { text-align: center; padding: 3rem; color: #6b7280; }
+  .empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+  /* MOTIVATION */
+  .motivation { background: linear-gradient(135deg, #1e1b4b, #1a2a1a); border: 1px solid #4338ca; border-radius: 12px; padding: 1rem 1.5rem; margin-bottom: 1.5rem; font-style: italic; color: #a5b4fc; font-size: 0.95rem; }
+
+  @media (max-width: 600px) {
+    .page { padding: 1rem; }
+    nav { padding: 0.75rem 1rem; }
+    .nav-links { gap: 0.3rem; }
+    .nav-btn { padding: 0.3rem 0.6rem; font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">🐼 Panda's Study Portal</div>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="showPage('dashboard')">Dashboard</button>
+    <button class="nav-btn" onclick="showPage('schedule')">Schedule</button>
+    <button class="nav-btn" onclick="showPage('tasks')">Tasks</button>
+    <button class="nav-btn" onclick="showPage('progress')">Progress</button>
+    <button class="nav-btn" onclick="showPage('reports')">Reports</button>
+  </div>
+</nav>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="page active">
+  <div class="motivation" id="quote">Loading today's motivation... ✨</div>
+
+  <div class="grid-4">
+    <div class="card">
+      <div class="card-title">Current Day</div>
+      <div class="card-value" id="current-day">—</div>
+      <div class="card-sub">of 30 days</div>
+      <div class="progress-bar"><div class="progress-fill" id="day-progress" style="width:0%"></div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Study Streak</div>
+      <div class="streak">
+        <div class="streak-fire">🔥</div>
+        <div class="streak-count" id="streak">0</div>
+      </div>
+      <div class="card-sub">days in a row</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Overall Progress</div>
+      <div class="card-value" id="overall-progress">0%</div>
+      <div class="card-sub">of syllabus covered</div>
+      <div class="progress-bar"><div class="progress-fill" id="overall-progress-bar" style="width:0%"></div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Current Week</div>
+      <div class="card-value" id="current-week">—</div>
+      <div class="card-sub" id="week-theme">—</div>
+    </div>
+  </div>
+
+  <div class="today-card" id="today-card">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+      <div>
+        <div style="font-size:0.75rem;color:#a5b4fc;margin-bottom:0.3rem">TODAY — DAY <span id="today-day-num">1</span></div>
+        <div class="today-title" id="today-title">Loading...</div>
+        <div style="margin-top:0.5rem" id="today-badge"></div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:0.75rem;color:#6b7280">Est. Time</div>
+        <div style="font-size:1.2rem;font-weight:700;color:#a78bfa" id="today-time">1.5 hrs</div>
+      </div>
+    </div>
+    <ul class="today-topics" id="today-topics"></ul>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Upcoming This Week</div>
+      <div id="upcoming-list"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Quick Stats</div>
+      <div id="quick-stats"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div id="schedule" class="page">
+  <h2 style="margin-bottom:1.5rem;font-size:1.3rem">📅 30-Day Study Plan</h2>
+  <div class="week-tabs" id="week-tabs"></div>
+  <div class="schedule-grid" id="schedule-grid"></div>
+
+  <!-- Topic detail modal -->
+  <div id="topic-detail" style="display:none" class="card" style="margin-top:1.5rem">
+    <div id="topic-detail-content"></div>
+  </div>
+</div>
+
+<!-- TASKS -->
+<div id="tasks" class="page">
+  <h2 style="margin-bottom:0.5rem;font-size:1.3rem">✅ Today's Tasks</h2>
+  <div style="color:#6b7280;font-size:0.85rem;margin-bottom:1.5rem" id="tasks-date"></div>
+
+  <div class="card" id="tasks-card">
+    <div id="tasks-list"></div>
+  </div>
+
+  <div class="card" style="margin-top:1.5rem">
+    <div class="card-title">📚 Resources for Today</div>
+    <div id="resources-list" style="margin-top:0.75rem"></div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div id="progress" class="page">
+  <h2 style="margin-bottom:1.5rem;font-size:1.3rem">📈 Your Progress</h2>
+
+  <div class="grid-4" id="progress-stats"></div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Quiz Score History</div>
+      <canvas id="score-chart" height="200"></canvas>
+    </div>
+    <div class="card">
+      <div class="card-title">Weekly Performance</div>
+      <canvas id="weekly-chart" height="200"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">💪 Strong Topics</div>
+      <div id="strong-topics"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🎯 Topics to Improve</div>
+      <div id="weak-topics"></div>
+    </div>
+  </div>
+</div>
+
+<!-- REPORTS -->
+<div id="reports" class="page">
+  <h2 style="margin-bottom:1.5rem;font-size:1.3rem">📋 EOD Reports & Feedback</h2>
+  <div id="reports-list"></div>
+</div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────
+let student = {}, schedule = [], tasks = {}, reports = [], progress = {};
+let currentWeekFilter = 1;
+let taskStates = JSON.parse(localStorage.getItem('taskStates') || '{}');
+
+const weekThemes = {
+  1: 'Pure Theory',
+  2: 'NLP + Embeddings',
+  3: 'RAG System',
+  4: 'Final Project'
+};
+
+const quotes = [
+  "Every expert was once a beginner. You've got this! 💪",
+  "Understanding RAG today means building intelligence tomorrow 🧠",
+  "One concept at a time — you're building something amazing! 🚀",
+  "The best time to start was yesterday. The next best time is now! ⚡",
+  "Your 30-day journey is writing your success story 📖",
+  "Each concept you learn is a brick in your project 🏗️",
+  "Confusion is the beginning of understanding 🌟",
+  "Progress, not perfection! Keep going Panda 🐼"
+];
+
+// ── FETCH DATA ─────────────────────────────────────────
+async function loadData() {
+  try {
+    const base = window.location.pathname.includes('panda-study') 
+      ? '/panda-study' : '';
+    
+    const [s, sch, t, r, p] = await Promise.all([
+      fetch(`${base}/data/student.json`).then(r => r.json()),
+      fetch(`${base}/data/schedule.json`).then(r => r.json()),
+      fetch(`${base}/data/tasks.json`).then(r => r.json()),
+      fetch(`${base}/data/reports.json`).then(r => r.json()),
+      fetch(`${base}/data/progress.json`).then(r => r.json()),
+    ]);
+    
+    student = s; schedule = sch; tasks = t; reports = r; progress = p;
+    renderAll();
+  } catch(e) {
+    console.error('Data load error:', e);
+    // Use defaults if fetch fails
+    student = {"name":"Panda","currentDay":1,"week":1,"totalDays":30,"streak":0,"overallProgress":0,"project":"Digital Memory Forensics (RAG System)"};
+    schedule = [];
+    tasks = {"day":1,"title":"What is Digital Forensics?","type":"theory","estimatedTime":"1.5 hours","tasks":[],"resources":[],"quote":"You've got this! 💪"};
+    reports = [];
+    progress = {"quizScores":[],"weeklyScores":[],"weakTopics":[],"strongTopics":[],"totalQuizzesTaken":0,"averageScore":0};
+    renderAll();
+  }
+}
+
+// ── RENDER ALL ─────────────────────────────────────────
+function renderAll() {
+  renderDashboard();
+  renderSchedule();
+  renderTasks();
+  renderProgress();
+  renderReports();
+}
+
+// ── DASHBOARD ─────────────────────────────────────────
+function renderDashboard() {
+  const day = student.currentDay || 1;
+  const week = student.week || 1;
+  const progress_pct = Math.round((day / 30) * 100);
+
+  document.getElementById('current-day').textContent = day;
+  document.getElementById('day-progress').style.width = progress_pct + '%';
+  document.getElementById('streak').textContent = student.streak || 0;
+  document.getElementById('overall-progress').textContent = student.overallProgress + '%';
+  document.getElementById('overall-progress-bar').style.width = student.overallProgress + '%';
+  document.getElementById('current-week').textContent = 'Week ' + week;
+  document.getElementById('week-theme').textContent = weekThemes[week] || '';
+  document.getElementById('today-day-num').textContent = day;
+  document.getElementById('quote').textContent = '"' + quotes[(day - 1) % quotes.length] + '"';
+
+  // Today's topic from schedule
+  const today = schedule.find(s => s.day === day) || schedule[0];
+  if (today) {
+    document.getElementById('today-title').textContent = today.title;
+    document.getElementById('today-time').textContent = today.type === 'theory' ? '1.5 hrs' : '3 hrs';
+    document.getElementById('today-badge').innerHTML = `<span class="badge badge-${today.type}">${today.type.toUpperCase()}</span>`;
+    const topicsEl = document.getElementById('today-topics');
+    topicsEl.innerHTML = (today.topics || []).map(t => `<li>${t}</li>`).join('');
+  }
+
+  // Upcoming
+  const upcoming = schedule.filter(s => s.day > day && s.day <= day + 4);
+  document.getElementById('upcoming-list').innerHTML = upcoming.length
+    ? upcoming.map(s => `
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid #1a1a2e">
+          <div>
+            <div style="font-size:0.7rem;color:#6b7280">Day ${s.day}</div>
+            <div style="font-size:0.85rem;color:#e2e8f0">${s.title}</div>
+          </div>
+          <span class="badge badge-${s.type}">${s.type}</span>
+        </div>`).join('')
+    : '<div class="empty"><div class="empty-icon">🎉</div>Week complete!</div>';
+
+  // Quick stats
+  const completed = schedule.filter(s => s.status === 'completed').length;
+  document.getElementById('quick-stats').innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:0.75rem">
+      <div style="display:flex;justify-content:space-between"><span style="color:#6b7280">Days completed</span><span style="color:#34d399;font-weight:600">${completed}/30</span></div>
+      <div style="display:flex;justify-content:space-between"><span style="color:#6b7280">Quizzes taken</span><span style="color:#a78bfa;font-weight:600">${progress.totalQuizzesTaken || 0}</span></div>
+      <div style="display:flex;justify-content:space-between"><span style="color:#6b7280">Avg quiz score</span><span style="color:#60a5fa;font-weight:600">${progress.averageScore || 0}%</span></div>
+      <div style="display:flex;justify-content:space-between"><span style="color:#6b7280">Project</span><span style="color:#f59e0b;font-weight:600;font-size:0.8rem">RAG System</span></div>
+    </div>`;
+}
+
+// ── SCHEDULE ──────────────────────────────────────────
+function renderSchedule() {
+  // Week tabs
+  document.getElementById('week-tabs').innerHTML = [1,2,3,4].map(w => `
+    <button class="week-tab ${w === currentWeekFilter ? 'active' : ''}" 
+            onclick="filterWeek(${w})">Week ${w} — ${weekThemes[w]}</button>`).join('');
+
+  const filtered = schedule.filter(s => s.week === currentWeekFilter);
+  document.getElementById('schedule-grid').innerHTML = filtered.map(s => `
+    <div class="schedule-item ${s.status}" onclick="showTopicDetail(${s.day})">
+      <div class="schedule-day">Day ${s.day} · ${s.date ? s.date.slice(5) : ''}</div>
+      <div class="schedule-title">${s.title}</div>
+      <div style="margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center">
+        <span class="badge badge-${s.type}" style="font-size:0.65rem">${s.type}</span>
+        ${s.status === 'completed' ? '✅' : s.status === 'today' ? '📍' : ''}
+      </div>
+    </div>`).join('');
+}
+
+function filterWeek(w) {
+  currentWeekFilter = w;
+  renderSchedule();
+}
+
+function showTopicDetail(day) {
+  const item = schedule.find(s => s.day === day);
+  if (!item) return;
+  const el = document.getElementById('topic-detail');
+  document.getElementById('topic-detail-content').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:1rem">
+      <div>
+        <div style="font-size:0.75rem;color:#6b7280;margin-bottom:0.3rem">Day ${item.day} · Week ${item.week}</div>
+        <div style="font-size:1.2rem;font-weight:700;color:#e2e8f0">${item.title}</div>
+      </div>
+      <span class="badge badge-${item.type}">${item.type.toUpperCase()}</span>
+    </div>
+    <div style="margin-top:1rem">
+      <div style="font-size:0.75rem;color:#6b7280;margin-bottom:0.5rem">TOPICS TO COVER</div>
+      ${(item.topics || []).map(t => `<div style="padding:0.3rem 0;color:#a5b4fc;display:flex;gap:0.5rem"><span style="color:#6d28d9">→</span>${t}</div>`).join('')}
+    </div>`;
+  el.style.display = 'block';
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ── TASKS ────────────────────────────────────────────
+function renderTasks() {
+  document.getElementById('tasks-date').textContent = `Day ${tasks.day || 1} · ${tasks.title || ''}`;
+  
+  const tasksList = tasks.tasks || [];
+  const savedStates = taskStates[tasks.day] || {};
+  
+  document.getElementById('tasks-list').innerHTML = tasksList.length
+    ? tasksList.map(t => {
+        const done = savedStates[t.id] || false;
+        return `<div class="task-item">
+          <div class="task-check ${done ? 'checked' : ''}" onclick="toggleTask(${t.id})" id="check-${t.id}">
+            ${done ? '✓' : ''}
+          </div>
+          <div class="task-text ${done ? 'done' : ''}" id="task-${t.id}">${t.task}</div>
+          <span style="font-size:0.7rem;color:#6b7280">${t.type}</span>
+        </div>`;
+      }).join('')
+    : '<div class="empty"><div class="empty-icon">✅</div>No tasks yet — check back tomorrow!</div>';
+
+  const resources = tasks.resources || [];
+  document.getElementById('resources-list').innerHTML = resources.length
+    ? resources.map(r => `
+        <a href="${r.url}" target="_blank" style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem;background:#0f0f1a;border-radius:8px;margin-bottom:0.5rem;color:#60a5fa;text-decoration:none;font-size:0.85rem">
+          🔗 ${r.title}
+        </a>`).join('')
+    : '<div style="color:#6b7280;font-size:0.85rem">Resources will be added by your mentor</div>';
+}
+
+function toggleTask(id) {
+  const dayKey = tasks.day || 1;
+  if (!taskStates[dayKey]) taskStates[dayKey] = {};
+  taskStates[dayKey][id] = !taskStates[dayKey][id];
+  localStorage.setItem('taskStates', JSON.stringify(taskStates));
+  
+  const check = document.getElementById(`check-${id}`);
+  const text = document.getElementById(`task-${id}`);
+  const done = taskStates[dayKey][id];
+  check.className = `task-check ${done ? 'checked' : ''}`;
+  check.textContent = done ? '✓' : '';
+  text.className = `task-text ${done ? 'done' : ''}`;
+}
+
+// ── PROGRESS ─────────────────────────────────────────
+function renderProgress() {
+  const scores = progress.quizScores || [];
+  const avg = progress.averageScore || 0;
+  
+  document.getElementById('progress-stats').innerHTML = `
+    <div class="card"><div class="card-title">Quizzes Taken</div><div class="card-value">${progress.totalQuizzesTaken || 0}</div></div>
+    <div class="card"><div class="card-title">Average Score</div><div class="card-value">${avg}%</div><div class="progress-bar"><div class="progress-fill" style="width:${avg}%"></div></div></div>
+    <div class="card"><div class="card-title">Strong Topics</div><div class="card-value">${(progress.strongTopics || []).length}</div></div>
+    <div class="card"><div class="card-title">Need Practice</div><div class="card-value">${(progress.weakTopics || []).length}</div></div>`;
+
+  // Score chart
+  const scoreCtx = document.getElementById('score-chart').getContext('2d');
+  new Chart(scoreCtx, {
+    type: 'line',
+    data: {
+      labels: scores.length ? scores.map((_, i) => `Quiz ${i+1}`) : ['No data yet'],
+      datasets: [{
+        label: 'Score %',
+        data: scores.length ? scores : [0],
+        borderColor: '#a78bfa',
+        backgroundColor: 'rgba(167,139,250,0.1)',
+        tension: 0.4,
+        fill: true
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { min: 0, max: 100, grid: { color: '#1a1a2e' }, ticks: { color: '#6b7280' } }, x: { grid: { color: '#1a1a2e' }, ticks: { color: '#6b7280' } } } }
+  });
+
+  // Weekly chart
+  const weeklyCtx = document.getElementById('weekly-chart').getContext('2d');
+  const weekly = progress.weeklyScores || [];
+  new Chart(weeklyCtx, {
+    type: 'bar',
+    data: {
+      labels: weekly.map(w => w.week),
+      datasets: [{
+        label: 'Score',
+        data: weekly.map(w => w.score),
+        backgroundColor: ['#6d28d9','#2563eb','#059669','#d97706'],
+        borderRadius: 8
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { min: 0, max: 100, grid: { color: '#1a1a2e' }, ticks: { color: '#6b7280' } }, x: { grid: { color: '#1a1a2e' }, ticks: { color: '#6b7280' } } } }
+  });
+
+  // Strong/weak topics
+  const strong = progress.strongTopics || [];
+  const weak = progress.weakTopics || [];
+  
+  document.getElementById('strong-topics').innerHTML = strong.length
+    ? strong.map(t => `<div style="padding:0.5rem;background:#022c22;border-radius:8px;margin-bottom:0.5rem;color:#34d399;font-size:0.85rem">✅ ${t}</div>`).join('')
+    : '<div style="color:#6b7280;font-size:0.85rem;padding:0.5rem">Complete quizzes to see your strong topics!</div>';
+    
+  document.getElementById('weak-topics').innerHTML = weak.length
+    ? weak.map(t => `<div style="padding:0.5rem;background:#1a1a2e;border-radius:8px;margin-bottom:0.5rem;color:#f59e0b;font-size:0.85rem">🎯 ${t}</div>`).join('')
+    : '<div style="color:#6b7280;font-size:0.85rem;padding:0.5rem">Keep studying — weak areas will appear here!</div>';
+}
+
+// ── REPORTS ──────────────────────────────────────────
+function renderReports() {
+  document.getElementById('reports-list').innerHTML = reports.length
+    ? reports.slice().reverse().map(r => `
+        <div class="report-item">
+          <div class="report-date">${r.date} · Day ${r.day}</div>
+          <div class="report-topic">${r.topic || 'Study Session'}</div>
+          ${r.score !== undefined ? `<div style="margin-bottom:0.5rem"><span class="report-score">⭐ ${r.score}/10</span></div>` : ''}
+          ${r.completed ? `<div style="font-size:0.85rem;color:#e2e8f0;margin-bottom:0.3rem"><strong>✅ Completed:</strong> ${r.completed}</div>` : ''}
+          ${r.confused ? `<div style="font-size:0.85rem;color:#e2e8f0;margin-bottom:0.3rem"><strong>🤔 Confused about:</strong> ${r.confused}</div>` : ''}
+          ${r.feedback ? `<div style="font-size:0.85rem;background:#1e1b4b;padding:0.75rem;border-radius:8px;color:#a5b4fc;margin-top:0.5rem"><strong>💬 Mentor feedback:</strong> ${r.feedback}</div>` : ''}
+        </div>`).join('')
+    : `<div class="empty">
+        <div class="empty-icon">📋</div>
+        <div style="font-size:1rem;font-weight:600;margin-bottom:0.5rem">No reports yet</div>
+        <div style="font-size:0.85rem">Your EOD reports will appear here after your first study session!</div>
+      </div>`;
+}
+
+// ── NAVIGATION ────────────────────────────────────────
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ── INIT ──────────────────────────────────────────────
+loadData();
+</script>
+</body>
+</html>
