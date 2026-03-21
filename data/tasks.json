@@ -1,0 +1,41 @@
+{
+  "date": "2026-03-21",
+  "day": 1,
+  "title": "What is Digital Forensics?",
+  "type": "theory",
+  "estimatedTime": "1.5 hours",
+  "tasks": [
+    {
+      "id": 1,
+      "task": "Digital Forensics definition",
+      "done": false,
+      "type": "read"
+    },
+    {
+      "id": 2,
+      "task": "Types of digital evidence",
+      "done": false,
+      "type": "read"
+    },
+    {
+      "id": 3,
+      "task": "Why AI is needed in forensics",
+      "done": false,
+      "type": "read"
+    },
+    {
+      "id": 4,
+      "task": "How your project fits in",
+      "done": false,
+      "type": "read"
+    },
+    {
+      "id": 99,
+      "task": "Submit EOD report to Agent(I) on WhatsApp \ud83d\udcf1",
+      "done": false,
+      "type": "report"
+    }
+  ],
+  "resources": [],
+  "quote": "Every expert was once a beginner \ud83d\udcaa"
+}
