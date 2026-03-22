@@ -4,7 +4,7 @@
     "date": "2026-03-22",
     "title": "What is Digital Forensics?",
     "week": 1,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Digital Forensics definition",
       "Types of digital evidence",
@@ -18,7 +18,7 @@
     "date": "2026-03-23",
     "title": "What is RAG?",
     "week": 1,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "What is an LLM?",
       "Problem with pure LLMs",

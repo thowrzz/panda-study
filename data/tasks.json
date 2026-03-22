@@ -1,31 +1,31 @@
 {
   "date": "2026-03-22",
-  "day": 1,
-  "title": "What is Digital Forensics?",
+  "day": 2,
+  "title": "What is RAG?",
   "type": "theory",
   "estimatedTime": "1.5 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Digital Forensics definition",
+      "task": "What is an LLM?",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Types of digital evidence",
+      "task": "Problem with pure LLMs",
       "done": false,
       "type": "read"
     },
     {
       "id": 3,
-      "task": "Why AI is needed in forensics",
+      "task": "RAG: Retrieve \u2192 Augment \u2192 Generate",
       "done": false,
       "type": "read"
     },
     {
       "id": 4,
-      "task": "How your project fits in",
+      "task": "RAG vs Fine-tuning",
       "done": false,
       "type": "read"
     },
@@ -37,5 +37,5 @@
     }
   ],
   "resources": [],
-  "quote": "Every expert was once a beginner \ud83d\udcaa"
+  "quote": "Understanding RAG today means building tomorrow \ud83e\udde0"
 }
