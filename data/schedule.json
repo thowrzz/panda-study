@@ -18,7 +18,7 @@
     "date": "2026-03-23",
     "title": "What is RAG?",
     "week": 1,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "What is an LLM?",
       "Problem with pure LLMs",
@@ -32,7 +32,7 @@
     "date": "2026-03-24",
     "title": "Vector Databases",
     "week": 1,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Why SQL fails for semantic search",
       "What is a vector?",
