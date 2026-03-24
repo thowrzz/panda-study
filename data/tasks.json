@@ -1,31 +1,43 @@
 {
-  "date": "2026-03-23",
-  "day": 3,
-  "title": "Vector Databases",
+  "date": "2026-03-24",
+  "day": 4,
+  "title": "How Embeddings Work",
   "type": "theory",
   "estimatedTime": "1.5 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Why SQL fails for semantic search",
+      "task": "What is an embedding?",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "What is a vector?",
+      "task": "Text to numbers",
       "done": false,
       "type": "read"
     },
     {
       "id": 3,
-      "task": "FAISS vs Pinecone vs Chroma",
+      "task": "Cosine similarity",
       "done": false,
       "type": "read"
     },
     {
       "id": 4,
-      "task": "Why we use FAISS",
+      "task": "Sentence Transformers",
+      "done": false,
+      "type": "read"
+    },
+    {
+      "id": 5,
+      "task": "Embedding forensic evidence documents",
+      "done": false,
+      "type": "read"
+    },
+    {
+      "id": 6,
+      "task": "Choosing the right embedding model",
       "done": false,
       "type": "read"
     },
@@ -37,5 +49,5 @@
     }
   ],
   "resources": [],
-  "quote": "One concept at a time \u2014 you're building something amazing! \ud83d\ude80"
+  "quote": "Progress, not perfection! Keep going Panda \ud83d\udc3c"
 }
