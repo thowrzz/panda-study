@@ -1,43 +1,31 @@
 {
-  "date": "2026-03-24",
-  "day": 4,
-  "title": "How Embeddings Work",
+  "date": "2026-03-25",
+  "day": 5,
+  "title": "Similarity Search",
   "type": "theory",
   "estimatedTime": "1.5 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "What is an embedding?",
+      "task": "What is similarity search?",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Text to numbers",
+      "task": "Euclidean vs Cosine distance",
       "done": false,
       "type": "read"
     },
     {
       "id": 3,
-      "task": "Cosine similarity",
+      "task": "Top-K retrieval",
       "done": false,
       "type": "read"
     },
     {
       "id": 4,
-      "task": "Sentence Transformers",
-      "done": false,
-      "type": "read"
-    },
-    {
-      "id": 5,
-      "task": "Embedding forensic evidence documents",
-      "done": false,
-      "type": "read"
-    },
-    {
-      "id": 6,
-      "task": "Choosing the right embedding model",
+      "task": "Chunk size importance",
       "done": false,
       "type": "read"
     },
@@ -49,5 +37,5 @@
     }
   ],
   "resources": [],
-  "quote": "Progress, not perfection! Keep going Panda \ud83d\udc3c"
+  "quote": "Every expert was once a beginner \ud83d\udcaa"
 }
