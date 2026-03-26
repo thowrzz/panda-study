@@ -62,7 +62,7 @@
     "date": "2026-03-27",
     "title": "Similarity Search",
     "week": 1,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "What is similarity search?",
       "Euclidean vs Cosine distance",
@@ -76,7 +76,7 @@
     "date": "2026-03-28",
     "title": "LangChain & LlamaIndex",
     "week": 1,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "What problem they solve",
       "Chains and agents",

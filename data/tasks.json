@@ -1,31 +1,31 @@
 {
-  "date": "2026-03-25",
-  "day": 5,
-  "title": "Similarity Search",
+  "date": "2026-03-26",
+  "day": 6,
+  "title": "LangChain & LlamaIndex",
   "type": "theory",
   "estimatedTime": "1.5 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "What is similarity search?",
+      "task": "What problem they solve",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Euclidean vs Cosine distance",
+      "task": "Chains and agents",
       "done": false,
       "type": "read"
     },
     {
       "id": 3,
-      "task": "Top-K retrieval",
+      "task": "Document loaders",
       "done": false,
       "type": "read"
     },
     {
       "id": 4,
-      "task": "Chunk size importance",
+      "task": "Retrieval chains",
       "done": false,
       "type": "read"
     },
@@ -37,5 +37,5 @@
     }
   ],
   "resources": [],
-  "quote": "Every expert was once a beginner \ud83d\udcaa"
+  "quote": "Understanding RAG today means building tomorrow \ud83e\udde0"
 }
