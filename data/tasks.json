@@ -1,31 +1,31 @@
 {
-  "date": "2026-03-26",
-  "day": 6,
-  "title": "LangChain & LlamaIndex",
-  "type": "theory",
-  "estimatedTime": "1.5 hours",
+  "date": "2026-03-27",
+  "day": 7,
+  "title": "Week 1 Review + Quiz",
+  "type": "review",
+  "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "What problem they solve",
+      "task": "Full system flow",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Chains and agents",
+      "task": "Architecture overview",
       "done": false,
       "type": "read"
     },
     {
       "id": 3,
-      "task": "Document loaders",
+      "task": "20-question quiz",
       "done": false,
       "type": "read"
     },
     {
       "id": 4,
-      "task": "Retrieval chains",
+      "task": "Identify weak areas",
       "done": false,
       "type": "read"
     },
@@ -37,5 +37,5 @@
     }
   ],
   "resources": [],
-  "quote": "Understanding RAG today means building tomorrow \ud83e\udde0"
+  "quote": "One concept at a time \u2014 you're building something amazing! \ud83d\ude80"
 }
