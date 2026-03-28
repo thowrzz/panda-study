@@ -1,31 +1,25 @@
 {
-  "date": "2026-03-27",
-  "day": 7,
-  "title": "Week 1 Review + Quiz",
-  "type": "review",
+  "date": "2026-03-28",
+  "day": 8,
+  "title": "Text Cleaning & NLP",
+  "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Full system flow",
+      "task": "Why preprocessing matters",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Architecture overview",
+      "task": "Noise removal",
       "done": false,
       "type": "read"
     },
     {
       "id": 3,
-      "task": "20-question quiz",
-      "done": false,
-      "type": "read"
-    },
-    {
-      "id": 4,
-      "task": "Identify weak areas",
+      "task": "Text normalization",
       "done": false,
       "type": "read"
     },
@@ -37,5 +31,5 @@
     }
   ],
   "resources": [],
-  "quote": "One concept at a time \u2014 you're building something amazing! \ud83d\ude80"
+  "quote": "Progress, not perfection! Keep going Panda \ud83d\udc3c"
 }
