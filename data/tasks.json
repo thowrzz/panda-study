@@ -1,25 +1,25 @@
 {
-  "date": "2026-03-28",
-  "day": 8,
-  "title": "Text Cleaning & NLP",
+  "date": "2026-03-29",
+  "day": 9,
+  "title": "Chunking Strategies",
   "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Why preprocessing matters",
+      "task": "Chunking concept",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Noise removal",
+      "task": "Chunk size tuning",
       "done": false,
       "type": "read"
     },
     {
       "id": 3,
-      "task": "Text normalization",
+      "task": "Overlap strategies",
       "done": false,
       "type": "read"
     },
@@ -31,5 +31,5 @@
     }
   ],
   "resources": [],
-  "quote": "Progress, not perfection! Keep going Panda \ud83d\udc3c"
+  "quote": "Every expert was once a beginner \ud83d\udcaa"
 }

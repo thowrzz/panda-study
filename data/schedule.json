@@ -104,7 +104,7 @@
     "date": "2026-03-30",
     "title": "Text Cleaning & NLP",
     "week": 2,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Why preprocessing matters",
       "Noise removal",
@@ -117,7 +117,7 @@
     "date": "2026-03-31",
     "title": "Chunking Strategies",
     "week": 2,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Chunking concept",
       "Chunk size tuning",
