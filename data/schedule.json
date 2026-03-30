@@ -117,7 +117,7 @@
     "date": "2026-03-31",
     "title": "Chunking Strategies",
     "week": 2,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Chunking concept",
       "Chunk size tuning",
@@ -130,7 +130,7 @@
     "date": "2026-03-32",
     "title": "Chunking Practice",
     "week": 2,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Split text into chunks",
       "Test different sizes"

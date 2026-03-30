@@ -1,25 +1,19 @@
 {
-  "date": "2026-03-29",
-  "day": 9,
-  "title": "Chunking Strategies",
+  "date": "2026-03-30",
+  "day": 10,
+  "title": "Chunking Practice",
   "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Chunking concept",
+      "task": "Split text into chunks",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Chunk size tuning",
-      "done": false,
-      "type": "read"
-    },
-    {
-      "id": 3,
-      "task": "Overlap strategies",
+      "task": "Test different sizes",
       "done": false,
       "type": "read"
     },
@@ -31,5 +25,5 @@
     }
   ],
   "resources": [],
-  "quote": "Every expert was once a beginner \ud83d\udcaa"
+  "quote": "Understanding RAG today means building tomorrow \ud83e\udde0"
 }
