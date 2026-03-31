@@ -1,19 +1,19 @@
 {
-  "date": "2026-03-30",
-  "day": 10,
-  "title": "Chunking Practice",
+  "date": "2026-03-31",
+  "day": 11,
+  "title": "Embeddings Deep Dive",
   "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Split text into chunks",
+      "task": "Generate embeddings",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Test different sizes",
+      "task": "Sentence Transformers code",
       "done": false,
       "type": "read"
     },
@@ -25,5 +25,5 @@
     }
   ],
   "resources": [],
-  "quote": "Understanding RAG today means building tomorrow \ud83e\udde0"
+  "quote": "One concept at a time \u2014 you're building something amazing! \ud83d\ude80"
 }

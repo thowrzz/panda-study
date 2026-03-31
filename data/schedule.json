@@ -130,7 +130,7 @@
     "date": "2026-03-32",
     "title": "Chunking Practice",
     "week": 2,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Split text into chunks",
       "Test different sizes"
@@ -142,7 +142,7 @@
     "date": "2026-03-33",
     "title": "Embeddings Deep Dive",
     "week": 2,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Generate embeddings",
       "Sentence Transformers code"
