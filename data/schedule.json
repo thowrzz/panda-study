@@ -142,7 +142,7 @@
     "date": "2026-03-33",
     "title": "Embeddings Deep Dive",
     "week": 2,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Generate embeddings",
       "Sentence Transformers code"
@@ -154,7 +154,7 @@
     "date": "2026-03-34",
     "title": "Embeddings Practice",
     "week": 2,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Embed real documents",
       "Compare similarities"
