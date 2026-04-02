@@ -1,19 +1,25 @@
 {
-  "date": "2026-04-01",
-  "day": 12,
-  "title": "Embeddings Practice",
+  "date": "2026-04-02",
+  "day": 13,
+  "title": "FAISS Setup",
   "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Embed real documents",
+      "task": "Install FAISS",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Compare similarities",
+      "task": "Create index",
+      "done": false,
+      "type": "read"
+    },
+    {
+      "id": 3,
+      "task": "Store embeddings",
       "done": false,
       "type": "read"
     },
@@ -25,5 +31,5 @@
     }
   ],
   "resources": [],
-  "quote": "Progress, not perfection! Keep going Panda \ud83d\udc3c"
+  "quote": "Every expert was once a beginner \ud83d\udcaa"
 }
