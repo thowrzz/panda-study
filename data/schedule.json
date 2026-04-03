@@ -166,7 +166,7 @@
     "date": "2026-03-35",
     "title": "FAISS Setup",
     "week": 2,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Install FAISS",
       "Create index",
@@ -179,7 +179,7 @@
     "date": "2026-03-36",
     "title": "FAISS Search",
     "week": 2,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Similarity search queries",
       "Retrieve top chunks"
