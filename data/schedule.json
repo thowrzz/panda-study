@@ -179,7 +179,7 @@
     "date": "2026-03-36",
     "title": "FAISS Search",
     "week": 2,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Similarity search queries",
       "Retrieve top chunks"
@@ -191,7 +191,7 @@
     "date": "2026-03-37",
     "title": "Search Implementation",
     "week": 3,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Build search pipeline",
       "Test retrieval accuracy"
