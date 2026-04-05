@@ -191,7 +191,7 @@
     "date": "2026-03-37",
     "title": "Search Implementation",
     "week": 3,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Build search pipeline",
       "Test retrieval accuracy"
@@ -203,7 +203,7 @@
     "date": "2026-03-38",
     "title": "Search Optimization",
     "week": 3,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Improve search quality",
       "Tune parameters"
