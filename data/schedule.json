@@ -203,7 +203,7 @@
     "date": "2026-03-38",
     "title": "Search Optimization",
     "week": 3,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Improve search quality",
       "Tune parameters"
@@ -215,7 +215,7 @@
     "date": "2026-03-39",
     "title": "Local LLM Setup",
     "week": 3,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Install Ollama",
       "Run local model"

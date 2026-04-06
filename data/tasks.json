@@ -1,19 +1,19 @@
 {
-  "date": "2026-04-05",
-  "day": 16,
-  "title": "Search Optimization",
+  "date": "2026-04-06",
+  "day": 17,
+  "title": "Local LLM Setup",
   "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Improve search quality",
+      "task": "Install Ollama",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Tune parameters",
+      "task": "Run local model",
       "done": false,
       "type": "read"
     },
@@ -25,5 +25,5 @@
     }
   ],
   "resources": [],
-  "quote": "Progress, not perfection! Keep going Panda \ud83d\udc3c"
+  "quote": "Every expert was once a beginner \ud83d\udcaa"
 }
