@@ -215,7 +215,7 @@
     "date": "2026-03-39",
     "title": "Local LLM Setup",
     "week": 3,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Install Ollama",
       "Run local model"
@@ -227,7 +227,7 @@
     "date": "2026-03-40",
     "title": "AI Response Generation",
     "week": 3,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Connect LLM to retriever",
       "Generate answers"

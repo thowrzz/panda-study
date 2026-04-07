@@ -1,19 +1,19 @@
 {
-  "date": "2026-04-06",
-  "day": 17,
-  "title": "Local LLM Setup",
+  "date": "2026-04-07",
+  "day": 18,
+  "title": "AI Response Generation",
   "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Install Ollama",
+      "task": "Connect LLM to retriever",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Run local model",
+      "task": "Generate answers",
       "done": false,
       "type": "read"
     },
@@ -25,5 +25,5 @@
     }
   ],
   "resources": [],
-  "quote": "Every expert was once a beginner \ud83d\udcaa"
+  "quote": "Understanding RAG today means building tomorrow \ud83e\udde0"
 }
