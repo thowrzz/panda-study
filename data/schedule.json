@@ -227,7 +227,7 @@
     "date": "2026-03-40",
     "title": "AI Response Generation",
     "week": 3,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Connect LLM to retriever",
       "Generate answers"
@@ -239,7 +239,7 @@
     "date": "2026-03-41",
     "title": "RAG Pipeline",
     "week": 3,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Full RAG flow",
       "Test end-to-end"
