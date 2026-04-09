@@ -239,7 +239,7 @@
     "date": "2026-03-41",
     "title": "RAG Pipeline",
     "week": 3,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Full RAG flow",
       "Test end-to-end"
@@ -251,7 +251,7 @@
     "date": "2026-03-42",
     "title": "Pipeline Integration",
     "week": 3,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Integrate all components",
       "Debug issues"
