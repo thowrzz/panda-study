@@ -1,19 +1,19 @@
 {
-  "date": "2026-04-09",
-  "day": 20,
-  "title": "Pipeline Integration",
-  "type": "practical",
+  "date": "2026-04-10",
+  "day": 21,
+  "title": "Week 3 Review",
+  "type": "review",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Integrate all components",
+      "task": "Full system test",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Debug issues",
+      "task": "Quiz",
       "done": false,
       "type": "read"
     },
@@ -25,5 +25,5 @@
     }
   ],
   "resources": [],
-  "quote": "Progress, not perfection! Keep going Panda \ud83d\udc3c"
+  "quote": "Every expert was once a beginner \ud83d\udcaa"
 }

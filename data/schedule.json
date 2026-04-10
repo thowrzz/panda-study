@@ -251,7 +251,7 @@
     "date": "2026-03-42",
     "title": "Pipeline Integration",
     "week": 3,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Integrate all components",
       "Debug issues"
@@ -263,7 +263,7 @@
     "date": "2026-03-43",
     "title": "Week 3 Review",
     "week": 3,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Full system test",
       "Quiz"
