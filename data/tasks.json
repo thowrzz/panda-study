@@ -1,19 +1,19 @@
 {
-  "date": "2026-04-10",
-  "day": 21,
-  "title": "Week 3 Review",
-  "type": "review",
+  "date": "2026-04-11",
+  "day": 22,
+  "title": "Q&A API",
+  "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Full system test",
+      "task": "API design",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Quiz",
+      "task": "Create /ask/ endpoint",
       "done": false,
       "type": "read"
     },
@@ -25,5 +25,5 @@
     }
   ],
   "resources": [],
-  "quote": "Every expert was once a beginner \ud83d\udcaa"
+  "quote": "Understanding RAG today means building tomorrow \ud83e\udde0"
 }

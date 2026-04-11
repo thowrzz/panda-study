@@ -263,7 +263,7 @@
     "date": "2026-03-43",
     "title": "Week 3 Review",
     "week": 3,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Full system test",
       "Quiz"
@@ -275,7 +275,7 @@
     "date": "2026-03-44",
     "title": "Q&A API",
     "week": 4,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "API design",
       "Create /ask/ endpoint"
