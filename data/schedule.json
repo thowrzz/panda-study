@@ -287,7 +287,7 @@
     "date": "2026-03-45",
     "title": "API Testing",
     "week": 4,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Test API endpoints",
       "Handle errors"
@@ -299,7 +299,7 @@
     "date": "2026-03-46",
     "title": "Timeline Generator",
     "week": 4,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Extract dates",
       "Build timeline"
