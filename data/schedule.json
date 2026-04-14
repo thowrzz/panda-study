@@ -299,7 +299,7 @@
     "date": "2026-03-46",
     "title": "Timeline Generator",
     "week": 4,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Extract dates",
       "Build timeline"
@@ -311,7 +311,7 @@
     "date": "2026-03-47",
     "title": "Timeline UI",
     "week": 4,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Display timeline",
       "Format output"

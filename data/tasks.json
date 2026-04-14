@@ -1,19 +1,19 @@
 {
-  "date": "2026-04-13",
-  "day": 24,
-  "title": "Timeline Generator",
+  "date": "2026-04-14",
+  "day": 25,
+  "title": "Timeline UI",
   "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Extract dates",
+      "task": "Display timeline",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Build timeline",
+      "task": "Format output",
       "done": false,
       "type": "read"
     },
@@ -25,5 +25,5 @@
     }
   ],
   "resources": [],
-  "quote": "Progress, not perfection! Keep going Panda \ud83d\udc3c"
+  "quote": "Every expert was once a beginner \ud83d\udcaa"
 }
