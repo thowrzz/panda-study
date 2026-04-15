@@ -1,19 +1,19 @@
 {
-  "date": "2026-04-14",
-  "day": 25,
-  "title": "Timeline UI",
+  "date": "2026-04-15",
+  "day": 26,
+  "title": "Frontend Basics",
   "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Display timeline",
+      "task": "React basics",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Format output",
+      "task": "Build simple UI",
       "done": false,
       "type": "read"
     },
@@ -25,5 +25,5 @@
     }
   ],
   "resources": [],
-  "quote": "Every expert was once a beginner \ud83d\udcaa"
+  "quote": "Understanding RAG today means building tomorrow \ud83e\udde0"
 }
