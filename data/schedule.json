@@ -323,7 +323,7 @@
     "date": "2026-03-48",
     "title": "Frontend Basics",
     "week": 4,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "React basics",
       "Build simple UI"
@@ -335,7 +335,7 @@
     "date": "2026-03-49",
     "title": "Frontend Integration",
     "week": 4,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Connect UI to API",
       "Test full flow"
