@@ -347,7 +347,7 @@
     "date": "2026-03-50",
     "title": "Testing",
     "week": 4,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Write test cases",
       "Run multiple files"
@@ -359,7 +359,7 @@
     "date": "2026-03-51",
     "title": "Optimization",
     "week": 4,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Improve speed",
       "Tune chunk size"

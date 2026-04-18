@@ -1,19 +1,19 @@
 {
-  "date": "2026-04-17",
-  "day": 28,
-  "title": "Testing",
+  "date": "2026-04-18",
+  "day": 29,
+  "title": "Optimization",
   "type": "practical",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Write test cases",
+      "task": "Improve speed",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Run multiple files",
+      "task": "Tune chunk size",
       "done": false,
       "type": "read"
     },
@@ -25,5 +25,5 @@
     }
   ],
   "resources": [],
-  "quote": "Progress, not perfection! Keep going Panda \ud83d\udc3c"
+  "quote": "Every expert was once a beginner \ud83d\udcaa"
 }
