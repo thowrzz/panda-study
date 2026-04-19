@@ -1,19 +1,25 @@
 {
-  "date": "2026-04-18",
-  "day": 29,
-  "title": "Optimization",
-  "type": "practical",
+  "date": "2026-04-19",
+  "day": 30,
+  "title": "Final Demo + Viva Prep",
+  "type": "review",
   "estimatedTime": "3 hours",
   "tasks": [
     {
       "id": 1,
-      "task": "Improve speed",
+      "task": "Demo preparation",
       "done": false,
       "type": "read"
     },
     {
       "id": 2,
-      "task": "Tune chunk size",
+      "task": "Viva Q&A practice",
+      "done": false,
+      "type": "read"
+    },
+    {
+      "id": 3,
+      "task": "Final presentation",
       "done": false,
       "type": "read"
     },
@@ -25,5 +31,5 @@
     }
   ],
   "resources": [],
-  "quote": "Every expert was once a beginner \ud83d\udcaa"
+  "quote": "Understanding RAG today means building tomorrow \ud83e\udde0"
 }

@@ -359,7 +359,7 @@
     "date": "2026-03-51",
     "title": "Optimization",
     "week": 4,
-    "status": "today",
+    "status": "completed",
     "topics": [
       "Improve speed",
       "Tune chunk size"
@@ -371,7 +371,7 @@
     "date": "2026-03-52",
     "title": "Final Demo + Viva Prep",
     "week": 4,
-    "status": "upcoming",
+    "status": "today",
     "topics": [
       "Demo preparation",
       "Viva Q&A practice",
